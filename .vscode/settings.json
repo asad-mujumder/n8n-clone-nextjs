@@ -1,0 +1,58 @@
+{
+  /* Editor */
+  "editor.rulers": [115],
+
+  /* TypeScript — use workspace version instead of VS Code's built-in */
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+
+  /* Prettier */
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.useEditorConfig": false,
+  "prettier.configPath": ".prettierrc",
+
+  /* Eslint */
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  /* Stylelint */
+  // "css.validate": false, // As CSS validation will be done by Stylelint
+  // "stylelint.configFile": "stylelint.config.js"
+
+  /* Code Action on Save */
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": true,
+  //   "source.fixAll.stylelint": true
+  // }, // Uncomment it if you want Eslint and Stylelint to fix code upon save
+
+  /* File nesting — cleaner explorer for component folders */
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.tsx": "${capture}.css, ${capture}.test.tsx, ${capture}.stories.tsx",
+    "vite.config.*": "vite.config.*, vitest.config.*",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, pnpm-workspace.yaml, .npmrc",
+    "tsconfig.json": "tsconfig.*.json"
+  },
+
+  /* Silence noisy files in search */
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/out": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/dist-ssr": true,
+    "**/.git": true,
+    "**/.vscode": true
+  }
+}

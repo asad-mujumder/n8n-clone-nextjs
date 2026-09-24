@@ -1,0 +1,17 @@
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "arrowParens": "always",
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-classnames",
+    "prettier-plugin-prisma",
+    "prettier-plugin-merge"
+  ],
+  "tailwindFunctions": ["cn", "clsx"],
+  "tailwindStylesheet": "./src/styles/globals.css"
+}

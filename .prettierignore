@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/build
+/dist
+/dist-ssr
+
+# static assets
+/public
+
+# lock files
+pnpm-lock.yaml
+pnpm-workspace.yaml
