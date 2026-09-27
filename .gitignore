@@ -19,6 +19,8 @@
 
 # production
 /build
+/dist
+/dist-ssr
 
 # misc
 .DS_Store
@@ -32,6 +34,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -45,3 +48,15 @@ next-env.d.ts
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/launch.json
+
+# cache
+.eslintcache
+
+# AI agents
+skills-lock.json
+/.agents/
+/.claude/
+/.windsurf/
+
+# prisma
+/src/generated/prisma
