@@ -2,9 +2,12 @@ import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HydrateClient, prefetch, trpc } from '@/trpc/server';
 import HomeClient from '@/components/app/HomeClient';
+import { requireAuth } from '@/server/auth/session';
+import LogoutBtn from '@/components/app/logout-btn';
 
 export default async function Home() {
-  prefetch(trpc.getUsers.queryOptions()); // prefetch
+  await requireAuth();
+  prefetch(trpc.getProfile.queryOptions()); // prefetch
 
   return (
     <HydrateClient>
@@ -29,6 +32,9 @@ export default async function Home() {
                 <HomeClient />
               </Suspense>
             </ErrorBoundary>
+            <div>
+              <LogoutBtn />
+            </div>
           </div>
         </main>
       </div>

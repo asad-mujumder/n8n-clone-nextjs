@@ -5,11 +5,11 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 
 const HomeClient = () => {
   const trpc = useTRPC();
-  const { data } = useSuspenseQuery(trpc.getUsers.queryOptions());
+  const { data } = useSuspenseQuery(trpc.getProfile.queryOptions());
 
   return (
     <p className="text-lg font-bold text-red-600 dark:text-red-400">
-      {data[0].firstName + ' ' + data[0].lastName}
+      {data != null ? data.firstName + ' ' + data.lastName : 'No User Found'}
     </p>
   );
 };
