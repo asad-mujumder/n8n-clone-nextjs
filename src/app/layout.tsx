@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { cn } from 'cn';
 import { TRPCReactProvider } from '@/trpc/client';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -35,7 +36,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       )}
     >
       <body className="flex min-h-full flex-col">
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          {children}
+          <Toaster />
+        </TRPCReactProvider>
       </body>
     </html>
   );
