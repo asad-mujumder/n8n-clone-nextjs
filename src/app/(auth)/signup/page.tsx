@@ -5,9 +5,9 @@ const Signup = async () => {
   await requireUnauth();
 
   return (
-    <div>
+    <>
       <SignupForm />
-    </div>
+    </>
   );
 };
 

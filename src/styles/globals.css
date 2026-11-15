@@ -143,4 +143,13 @@
   html {
     @apply font-sans;
   }
+  button:not([disabled]),
+  [role='button']:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+/* React Flow node selection styles */
+.react-flow__node.selected #base-node {
+  @apply shadow-lg ring-3 ring-muted-foreground/25;
 }

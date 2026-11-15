@@ -4,9 +4,9 @@ import { requireUnauth } from '@/server/auth/session';
 const Login = async () => {
   await requireUnauth();
   return (
-    <div>
+    <>
       <LoginForm />
-    </div>
+    </>
   );
 };
 

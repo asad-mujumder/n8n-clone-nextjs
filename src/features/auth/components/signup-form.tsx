@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AuthLayout from './auth-layout';
 import {
   Card,
   CardContent,
@@ -72,173 +71,171 @@ const SignupForm = () => {
   const isPending = form.formState.isSubmitting || isSubmitting;
 
   return (
-    <AuthLayout>
-      <Card className="w-11/12 max-w-md p-4">
-        <CardHeader className="text-center">
-          <CardTitle>Welcome to N8N Clone</CardTitle>
-          <CardDescription>Create AI automations</CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-6">
-          <SocialButtons isPending={isPending} />
-          <div>
-            <form
-              id="signup-form"
-              method="post"
-              onSubmit={form.handleSubmit(onSubmit)}
-            >
-              <FieldGroup>
-                <Controller
-                  name="firstName"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="firstName">First Name</FieldLabel>
-                      <Input
-                        {...field}
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        aria-invalid={fieldState.invalid}
-                        placeholder="John"
-                        className="h-9"
-                        required
-                      />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-                <Controller
-                  name="lastName"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
-                      <Input
-                        {...field}
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        aria-invalid={fieldState.invalid}
-                        placeholder="Doe"
-                        className="h-9"
-                        required
-                      />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-                <Controller
-                  name="email"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="email">Email</FieldLabel>
-                      <Input
-                        {...field}
-                        type="email"
-                        id="email"
-                        name="email"
-                        aria-invalid={fieldState.invalid}
-                        placeholder="john@doe.com"
-                        className="h-9"
-                        required
-                      />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-                <Controller
-                  name="password"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="password">Password</FieldLabel>
-                      <Input
-                        {...field}
-                        type="password"
-                        id="password"
-                        name="password"
-                        aria-invalid={fieldState.invalid}
-                        placeholder="********"
-                        className="h-9"
-                        required
-                      />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-                <Controller
-                  name="confirmPassword"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="confirmPassword">
-                        Confirm Password
-                      </FieldLabel>
-                      <Input
-                        {...field}
-                        type="password"
-                        id="password"
-                        name="password"
-                        aria-invalid={fieldState.invalid}
-                        className="h-9"
-                        placeholder="********"
-                        required
-                      />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-              </FieldGroup>
-            </form>
-          </div>
-        </CardContent>
-        <CardFooter className="flex flex-col gap-2">
-          <Field
-            orientation="horizontal"
-            className="flex items-center justify-center"
+    <Card className="w-full p-4">
+      <CardHeader className="text-center">
+        <CardTitle>Welcome to N8N Clone</CardTitle>
+        <CardDescription>Create AI automations</CardDescription>
+      </CardHeader>
+      <CardContent className="grid gap-6">
+        <SocialButtons isPending={isPending} />
+        <div>
+          <form
+            id="signup-form"
+            method="post"
+            onSubmit={form.handleSubmit(onSubmit)}
           >
-            <Button
-              type="reset"
-              variant="outline"
-              size="lg"
-              onClick={() => form.reset()}
-              disabled={isPending}
-            >
-              Reset
-            </Button>
-            <Button
-              type="submit"
-              form="signup-form"
-              size="lg"
-              disabled={isPending}
-            >
-              Signup
-            </Button>
-          </Field>
-          <p>
-            Already have an account?{' '}
-            <Link
-              href="/signin"
-              className="text-link underline underline-offset-4
-                hover:text-link-hover"
-            >
-              Log in
-            </Link>
-          </p>
-        </CardFooter>
-      </Card>
-    </AuthLayout>
+            <FieldGroup>
+              <Controller
+                name="firstName"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="firstName">First Name</FieldLabel>
+                    <Input
+                      {...field}
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="John"
+                      className="h-9"
+                      required
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="lastName"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
+                    <Input
+                      {...field}
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="Doe"
+                      className="h-9"
+                      required
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="email"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="email">Email</FieldLabel>
+                    <Input
+                      {...field}
+                      type="email"
+                      id="email"
+                      name="email"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="john@doe.com"
+                      className="h-9"
+                      required
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="password"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="password">Password</FieldLabel>
+                    <Input
+                      {...field}
+                      type="password"
+                      id="password"
+                      name="password"
+                      aria-invalid={fieldState.invalid}
+                      placeholder="********"
+                      className="h-9"
+                      required
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+              <Controller
+                name="confirmPassword"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="confirmPassword">
+                      Confirm Password
+                    </FieldLabel>
+                    <Input
+                      {...field}
+                      type="password"
+                      id="password"
+                      name="password"
+                      aria-invalid={fieldState.invalid}
+                      className="h-9"
+                      placeholder="********"
+                      required
+                    />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+            </FieldGroup>
+          </form>
+        </div>
+      </CardContent>
+      <CardFooter className="flex flex-col gap-2">
+        <Field
+          orientation="horizontal"
+          className="flex items-center justify-center"
+        >
+          <Button
+            type="reset"
+            variant="outline"
+            size="lg"
+            onClick={() => form.reset()}
+            disabled={isPending}
+          >
+            Reset
+          </Button>
+          <Button
+            type="submit"
+            form="signup-form"
+            size="lg"
+            disabled={isPending}
+          >
+            Signup
+          </Button>
+        </Field>
+        <p>
+          Already have an account?{' '}
+          <Link
+            href="/signin"
+            className="text-link underline underline-offset-4
+              hover:text-link-hover"
+          >
+            Log in
+          </Link>
+        </p>
+      </CardFooter>
+    </Card>
   );
 };
 
