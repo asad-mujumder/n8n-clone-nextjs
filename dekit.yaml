@@ -1,0 +1,7 @@
+tasks:
+  inngest:
+    cmd: ['pnpm', 'run', 'inngest:dev']
+    autostart: true
+  app:
+    cmd: ['pnpm', 'run', 'dev']
+    autostart: true

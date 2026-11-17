@@ -2,5 +2,15 @@ allowBuilds:
   '@prisma/engines': true
   esbuild: true
   prisma: true
+  protobufjs: true
   sharp: false
   unrs-resolver: false
+permissions:
+  '@trpc/client':
+    skills: false
+  '@trpc/server':
+    skills: false
+  '@trpc/tanstack-react-query':
+    skills: false
+  inngest-cli:
+    build: true

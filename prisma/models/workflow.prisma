@@ -1,0 +1,6 @@
+model Workflow {
+  id   String @id @default(dbgenerated("pg_catalog.gen_random_uuid()")) @db.Uuid
+  name String @db.VarChar(200)
+
+  @@map("workflows")
+}

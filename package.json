@@ -19,7 +19,9 @@
     "postinstall": "prisma generate",
     "start": "next start",
     "lint": "eslint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "inngest:dev": "inngest-cli dev",
+    "dev:all": "dekit up"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -50,6 +52,7 @@
     "client-only": "^0.0.1",
     "cn": "^0.4.0",
     "dotenv": "^18.0.4",
+    "inngest": "^4.26.2",
     "lucide-react": "^1.47.0",
     "next": "16.3.6",
     "next-themes": "^0.4.6",
@@ -67,6 +70,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@dekit/cli": "^0.10.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/pg": "^8.23.1",
@@ -77,6 +81,7 @@
     "eslint-config-next": "16.3.6",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
+    "inngest-cli": "^1.53.0",
     "lint-staged": "^17.5.1",
     "prettier": "^3.9.9",
     "prettier-plugin-classnames": "^0.10.4",
